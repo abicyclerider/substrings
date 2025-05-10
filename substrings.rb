@@ -1,8 +1,8 @@
 def substrings(string, dictionary)
   dictionary.reduce({}) do |acc, word|
-    occurances = string.scan(word).count
+    occurrences = string.downcase.scan(word.downcase).count
     if occurances > 0
-      acc[word] = occurances
+      acc[word] = occurrences
     end
     acc
   end
